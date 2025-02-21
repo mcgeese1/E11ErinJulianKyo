@@ -31,7 +31,7 @@ if len(sys.argv)<2:
 
 run_time=int(sys.argv[1])
 
-filename="Weather_AQI.cvs"
+filename="Weather_AQI_inside5.cvs"
 
 i2c = board.I2C()
 bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c)
@@ -50,7 +50,7 @@ data=["Time","Temp","Gas","Humidity","Pressure","Alt","PM 1.0","PM 2.5","PM 10"]
 
 file = open(filename,"w",newline=None)
 writer = csv.writer(file)
-
+writer.writerow(data)
 
 while count < run_time:
     
